@@ -1,6 +1,6 @@
 # MRMFrontEndInterview
 Screening test for MRM javascript developers. The idea of this task is to make the tests pass. 
-You should take the code used here, fork it and submit your solutions as a pull request to this repo.
+You should take the code used here, clone it locally, and submit your solutions in a private link to us.
 
 Timebox yourself to each task, some are more difficult than others. We don't expect you to solve every problem. 
 The main test is discussing how you got on afterwards.
