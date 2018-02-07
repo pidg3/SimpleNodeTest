@@ -9,7 +9,7 @@ Override the "sayHello" method to say hello in the correct language
 
 import {English, French, Spanish} from '../app/test6';
 
-describe('classes', () => {
+describe('Classes', () => {
   it('can speak', () => {
     const english = new English('Chris');
     expect(english.sayHello()).to.equal('Hello Chris');

@@ -5,7 +5,7 @@ import names from '../data/names';
 import people from '../data/people';
 
 /*
-Modify the contents of 'app/test2.js' and implement the functions: capitalise, extractValue, extractCompountValue
+Modify the contents of 'app/test2.js' and implement the functions: capitalise, extractValue, extractCompoundValue
 
 capitalise - should take an array of strings
 It should return a new array with the strings capitalised
@@ -13,12 +13,12 @@ It should return a new array with the strings capitalised
 extractValue - should take an array of objects and a key
 It should return an array of values for the key
 
-extractCompountValue - should take an array of objects, a string with multiple keys seperated by "."s
-It shold return an array of values for the compound key
+extractCompoundValue - should take an array of objects, a string with multiple keys separated by "."s
+It should return an array of values for the compound key
 */
 import {capitalise, extractValue, extractCompoundValue} from '../app/test2';
 
-describe('array mapping', () => {
+describe('Array mapping', () => {
   it('should capitalise string', () => {
     const capitalised = capitalise(names);
     expect(capitalised.length, 'Should have the same number of elements as source array').to.equal(names.length);

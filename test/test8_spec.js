@@ -8,7 +8,7 @@ You must not use the + operator.
 This includes ++ and +=
 */
 
-describe('Test 8', () => {
+describe('0-100 addition', () => {
   it('Sum numbers 0 to 100', () => {
     let test8 = require('../app/test8').default
     expect(test8()).to.equal(5050);

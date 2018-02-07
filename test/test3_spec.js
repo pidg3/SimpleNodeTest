@@ -2,14 +2,14 @@ import { expect } from 'chai'
 import 'babel-polyfill'
 
 /*
-Modify the contents of 'app/test3.js' and implement a function that will return an array of the fibbonnacci sequence.
+Modify the contents of 'app/test3.js' and implement a function that will return an array of the Fibonacci sequence.
 
 https://en.wikipedia.org/wiki/Fibonacci_number.
 
 The function must take an number argument and generate that many numbers for the sequence.
 */
 
-describe('Test 3', () => {
+describe('Fibonacci', () => {
   it('should handle an empty argument', () => {
     let test3 = require('../app/test3').default
     expect(test3()).to.eql([]);

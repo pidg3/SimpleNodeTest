@@ -10,8 +10,8 @@ Modify the contents of 'app/test5.js' and implement the functions: groupBySex
 groupBySex - should take an array of people
 It should return a new object with keys for the value of sex and values containing array of people with that sex
 
-groupByYearThenSex - should take an array of poeple
-It shoudl return a new object with keys that are the year the person was born which should have values with keys
+groupByYearThenSex - should take an array of people
+It should return a new object with keys that are the year the person was born which should have values with keys
 for the sex which should have values that are arrays of people born that year with that sex.
 
 e.g.
@@ -22,7 +22,7 @@ e.g.
 */
 import {groupBySex, groupByYearThenSex} from '../app/test5';
 
-describe('array reducing', () => {
+describe('Array reducing', () => {
   it('should group people by sex', () => {
     const sexGroups = groupBySex(people);
     expect(Object.keys(sexGroups).length).to.equal(2);

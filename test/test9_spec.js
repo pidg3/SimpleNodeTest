@@ -14,23 +14,23 @@ class Node {
   }
 }
 
-describe('binary tree', () => {
+describe('Binary tree', () => {
   it('can count a single node', () => {
     const root = new Node(null, null);
     expect(countNodes(root)).to.equal(1);
   });
 
-  it('can cound a node with one child on the left', () => {
+  it('can count a node with one child on the left', () => {
     const root = new Node(new Node(null, null), null);
     expect(countNodes(root)).to.equal(2);
   })
 
-  it('can cound a node with one child on the right', () => {
+  it('can count a node with one child on the right', () => {
     const root = new Node(null, new Node(null, null));
     expect(countNodes(root)).to.equal(2);
   })
 
-  it('can cound a node with a child on the left and right', () => {
+  it('can count a node with a child on the left and right', () => {
     const root = new Node(new Node(null, null), new Node(null, null));
     expect(countNodes(root)).to.equal(3);
   })

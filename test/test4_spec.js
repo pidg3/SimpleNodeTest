@@ -9,7 +9,7 @@ https://en.wikipedia.org/wiki/Prime_number
 The function must take an number argument and generate all the prime numbers that appear BEFORE the argument.
 */
 
-describe('Test 4', () => {
+describe('Prime numbers', () => {
   it('should handle an empty argument', () => {
     let test4 = require('../app/test4').default
     expect(test4()).to.eql([]);

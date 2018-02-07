@@ -8,18 +8,18 @@ import people from '../data/people';
 Modify the contents of 'app/test1.js' and implement the functions: filterNames, objectFilter, compoundObjectFilter
 
 filterNames - should take an array of strings and a search string.
-It should return an array of names that startwith the search string
+It should return an array of names that start with the search string
 
 objectFilter - should take an array of objects, a key, and a search string
 It should return an array of objects that have a key that is equal to the search string
 
-compoundObjectFilter - should take an array of objects, a string with multiple keys seperated by "."s and a search string.
-It shold return an array of objects that have a key that equals the search string
+compoundObjectFilter - should take an array of objects, a string with multiple keys separated by "."s and a search string.
+It should return an array of objects that have a key that equals the search string
 */
 
 import {filterNames, objectFilter, compoundObjectFilter} from '../app/test1';
 
-describe('array filtering', () => {
+describe('Array filtering', () => {
   it('can filter a list of strings that start with a string', () => {
     const startsWithJ = filterNames(names, 'J');
     expect(startsWithJ.length, 'Expected 1 person to have a name that starts with J').to.equal(1);
