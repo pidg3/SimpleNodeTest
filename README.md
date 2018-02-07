@@ -17,11 +17,12 @@ To get set up, pull down this repo and cd into the folder.
 
 ## Rules
 
- - Expected time to complete task: **3 hours**
+ - Expected time to complete task: **4 hours**
  - You can't install any more packages/frameworks. Use what's there.
  - You can't change any files outside of `/app`. Don't remove any template code within any of the task files either.
  - Feel free to read StackOverflow/Google. We're not looking for a copy/paste though. Just demonstrate understanding.
  - You don't need to be too clever with your code. We're looking for something clear and understandable.
+ - Use ES6 syntax where you think it's applicable.
  - Commenting your code is always appreciated.
  - Have fun!
  
