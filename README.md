@@ -5,7 +5,8 @@ You should take the code used here, clone it locally, and submit your solutions 
 Timebox yourself to each task, some are more difficult than others. We don't expect you to solve every problem. 
 The main test is discussing how you got on afterwards.
 
-##Setup
+## Setup
+
 To get set up, pull down this repo and cd into the folder.
  - Make sure you have `npm`, `node` and all that good stuff already installed 
  - Run `npm install`
@@ -14,7 +15,8 @@ To get set up, pull down this repo and cd into the folder.
  - Run `npm test` to run your tests.
  - Make them all green!
 
-##Rules
+## Rules
+
  - Expected time to complete task: **3 hours**
  - You can't install any more packages/frameworks. Use what's there.
  - You can't change any files outside of `/app`. Don't remove any template code within any of the task files either.
