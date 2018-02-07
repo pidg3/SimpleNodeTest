@@ -5,12 +5,12 @@ import 'babel-polyfill'
 Modify the contents of 'app/test10.js' and implement a function that returns the 1st input parameter
 divided by the 2nd input parameter.
 
-The function should throw an error if:
+The function should throw an Error if:
   * The input parameters are not 2 numbers
   * The denominator (the second parameter) is zero
   * The result is not a whole number (i.e. the result 4 would be good, but 4.3 would be bad)
 
-NOTE: Use the error variables defined at the top of test/test10.js as error messages as applicable to pass the tests.
+NOTE: Use the error variables defined at the top of test/test10.js for the correct error messages needed to pass the tests.
 */
 
 import division, { numberErrMsg, denominatorErrMsg, resultErrMsg } from '../app/test10.js';
