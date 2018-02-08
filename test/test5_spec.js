@@ -26,19 +26,19 @@ describe('Array reducing', () => {
   it('should group people by sex', () => {
     const sexGroups = groupBySex(people);
     expect(Object.keys(sexGroups).length).to.equal(2);
-    expect(sexGroups['male']).to.be.defined
+    expect(sexGroups['male']).to.not.be.undefined;
     expect(sexGroups['male'].length).to.equal(4);
-    expect(sexGroups['female']).to.be.defined
+    expect(sexGroups['female']).to.not.be.undefined;
     expect(sexGroups['female'].length).to.equal(2);
   });
 
   it('should group people by year and then by sex', () => {
     const yearSexGroups = groupByYearThenSex(people);
     expect(Object.keys(yearSexGroups).length).to.equal(2);
-    expect(yearSexGroups['1971']).to.be.defined
+    expect(yearSexGroups['1971']).to.not.be.undefined;
     expect(yearSexGroups['1971']['male'].length).to.equal(2);
     expect(yearSexGroups['1971']['female'].length).to.equal(1);
-    expect(yearSexGroups['1972']).to.be.defined
+    expect(yearSexGroups['1972']).to.not.be.undefined;
     expect(yearSexGroups['1972']['male'].length).to.equal(2);
     expect(yearSexGroups['1972']['female'].length).to.equal(1);
   })
