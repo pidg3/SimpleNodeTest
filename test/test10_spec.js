@@ -22,6 +22,9 @@ describe('Validation', () => {
   it('Throws error if second argument is undefined', () => {
     expect(() => division(50)).to.throw(Error, numberErrMsg);
   });
+  it('Throws error if first argument is null', () => {
+    expect(() => division(null, 50)).to.throw(Error, numberErrMsg);
+  });
   it('Throws error if second argument is 0', () => {
     expect(() => division(12, 0)).to.throw(Error, denominatorErrMsg);
   });
