@@ -1,11 +1,11 @@
-export function capitalise(names){
+export function groupBy(people, key) {
 
 }
 
-export function extractValue(objects, key) {
+export function groupBySex(people) {
 
 }
 
-export function extractCompoundValue(objects, keysString) {
+export function groupByYearThenSex(people) {
 
 }

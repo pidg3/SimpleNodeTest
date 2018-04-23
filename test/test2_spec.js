@@ -5,41 +5,41 @@ import names from '../data/names';
 import people from '../data/people';
 
 /*
-Modify the contents of 'app/test2.js' and implement the functions: capitalise, extractValue, extractCompoundValue
+Modify the contents of 'app/test2.js' and implement the functions: groupBySex
 
-capitalise - should take an array of strings
-It should return a new array with the strings capitalised
+groupBySex - should take an array of people
+It should return a new object with keys for the value of sex and values containing array of people with that sex
 
-extractValue - should take an array of objects and a key
-It should return an array of values for the key
+groupByYearThenSex - should take an array of people
+It should return a new object with keys that are the year the person was born which should have values with keys
+for the sex which should have values that are arrays of people born that year with that sex.
 
-extractCompoundValue - should take an array of objects, a string with multiple keys separated by "."s
-It should return an array of values for the compound key
+e.g.
+
+{ '1971': { male: [ [Object], [Object] ], female: [ [Object] ] },
+  '1972': { male: [ [Object], [Object] ], female: [ [Object] ] } }
+
 */
-import {capitalise, extractValue, extractCompoundValue} from '../app/test2';
+import {groupBySex, groupByYearThenSex} from '../app/test2';
 
-describe('Array mapping', () => {
-  it('should capitalise string', () => {
-    const capitalised = capitalise(names);
-    expect(capitalised.length, 'Should have the same number of elements as source array').to.equal(names.length);
-    expect(capitalised[0]).to.equal('JIM');
-    expect(capitalised[1]).to.equal('BOB');
-    expect(capitalised[2]).to.equal('ARTHUR');
+describe('Array reducing', () => {
+  it('should group people by sex', () => {
+    const sexGroups = groupBySex(people);
+    expect(Object.keys(sexGroups).length).to.equal(2);
+    expect(sexGroups['male']).to.not.be.undefined;
+    expect(sexGroups['male'].length).to.equal(4);
+    expect(sexGroups['female']).to.not.be.undefined;
+    expect(sexGroups['female'].length).to.equal(2);
   });
 
-  it('should return a value from an object', () => {
-    const sexes = extractValue(people, 'sex');
-    expect(sexes.length, 'Should have the same number of elements as source array').to.equal(people.length);
-    people.forEach((person, index) => {
-      expect(sexes[index]).to.equal(person.sex);
-    });
-  });
-
-  it('should return a value from a compound key', () => {
-    const towns = extractCompoundValue(people, 'address.town');
-    expect(towns.length, 'Should have the same number of elements as source array').to.equal(people.length);
-    people.forEach((person, index) => {
-      expect(towns[index]).to.equal(person.address.town);
-    });
+  it('should group people by year and then by sex', () => {
+    const yearSexGroups = groupByYearThenSex(people);
+    expect(Object.keys(yearSexGroups).length).to.equal(2);
+    expect(yearSexGroups['1971']).to.not.be.undefined;
+    expect(yearSexGroups['1971']['male'].length).to.equal(2);
+    expect(yearSexGroups['1971']['female'].length).to.equal(1);
+    expect(yearSexGroups['1972']).to.not.be.undefined;
+    expect(yearSexGroups['1972']['male'].length).to.equal(2);
+    expect(yearSexGroups['1972']['female'].length).to.equal(1);
   })
 });

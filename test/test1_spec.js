@@ -25,12 +25,12 @@ describe('Array filtering', () => {
     expect(startsWithJ.length, 'Expected 1 person to have a name that starts with J').to.equal(1);
     expect(startsWithJ[0]).to.equal('Jim');
 
-    const startsWithBarny = filterNames(names, 'Barn');
-    expect(startsWithBarny.length, 'Expected 2 people to have a name that starts with Barn').to.equal(2);
-    expect(startsWithBarny[0]).to.equal('Barnaby');
-    expect(startsWithBarny[1]).to.equal('Barny');
+    const startsWithBarn = filterNames(names, 'Barn');
+    expect(startsWithBarn.length, 'Expected 2 people to have a name that starts with Barn').to.equal(2);
+    expect(startsWithBarn[0]).to.equal('Barnaby');
+    expect(startsWithBarn[1]).to.equal('Barny');
 
-    const noResults = filterNames(names, 'Mr Biggins');
+    const noResults = filterNames(names, 'Mr. Biggins');
     expect(noResults.length, 'Expected no results').to.equal(0);
   });
 

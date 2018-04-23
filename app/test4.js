@@ -1,3 +1,3 @@
-export default function getPrimes(max){
+export default function add0to100(){
 
 }

@@ -1,45 +1,41 @@
 import { expect } from 'chai'
 import 'babel-polyfill'
 
-import names from '../data/names';
-import people from '../data/people';
-
 /*
-Modify the contents of 'app/test5.js' and implement the functions: groupBySex
+Modify the contents of 'app/test5.js' and implement a function that returns the 1st input parameter
+divided by the 2nd input parameter.
 
-groupBySex - should take an array of people
-It should return a new object with keys for the value of sex and values containing array of people with that sex
+The function should throw an Error if:
+  * The input parameters are not 2 numbers
+  * The denominator (the second parameter) is zero
+  * The result is not a whole number (i.e. the result 4 would be good, but 4.3 would be bad)
 
-groupByYearThenSex - should take an array of people
-It should return a new object with keys that are the year the person was born which should have values with keys
-for the sex which should have values that are arrays of people born that year with that sex.
-
-e.g.
-
-{ '1971': { male: [ [Object], [Object] ], female: [ [Object] ] },
-  '1972': { male: [ [Object], [Object] ], female: [ [Object] ] } }
-
+NOTE: Use the error variables defined at the top of test/test5.js for the correct error messages needed to pass the tests.
 */
-import {groupBySex, groupByYearThenSex} from '../app/test5';
 
-describe('Array reducing', () => {
-  it('should group people by sex', () => {
-    const sexGroups = groupBySex(people);
-    expect(Object.keys(sexGroups).length).to.equal(2);
-    expect(sexGroups['male']).to.not.be.undefined;
-    expect(sexGroups['male'].length).to.equal(4);
-    expect(sexGroups['female']).to.not.be.undefined;
-    expect(sexGroups['female'].length).to.equal(2);
+import division, { numberErrMsg, denominatorErrMsg, resultErrMsg } from '../app/test5.js';
+
+describe('Validation', () => {
+  it('Throws error if first argument is string', () => {
+    expect(() => division('i-am-a-string', 4)).to.throw(Error, numberErrMsg);
   });
-
-  it('should group people by year and then by sex', () => {
-    const yearSexGroups = groupByYearThenSex(people);
-    expect(Object.keys(yearSexGroups).length).to.equal(2);
-    expect(yearSexGroups['1971']).to.not.be.undefined;
-    expect(yearSexGroups['1971']['male'].length).to.equal(2);
-    expect(yearSexGroups['1971']['female'].length).to.equal(1);
-    expect(yearSexGroups['1972']).to.not.be.undefined;
-    expect(yearSexGroups['1972']['male'].length).to.equal(2);
-    expect(yearSexGroups['1972']['female'].length).to.equal(1);
-  })
+  it('Throws error if second argument is undefined', () => {
+    expect(() => division(50)).to.throw(Error, numberErrMsg);
+  });
+  it('Throws error if first argument is null', () => {
+    expect(() => division(null, 50)).to.throw(Error, numberErrMsg);
+  });
+  it('Throws error if second argument is 0', () => {
+    expect(() => division(12, 0)).to.throw(Error, denominatorErrMsg);
+  });
+  it('Throws error if result is not a whole number', () => {
+    expect(() => division(12, 5)).to.throw(Error, resultErrMsg);
+    expect(() => division(200, 17)).to.throw(Error, resultErrMsg);
+  });
+  it('Returns correct value if validation passes', () => {
+    expect(() => division(12, 4)).to.not.throw();
+    expect(division(12, 4)).to.equal(3);
+    expect(division(16, 4)).to.equal(4);
+    expect(division(1024, 64)).to.equal(16);
+  });
 });
